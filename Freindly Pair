@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static int getSumOfDivisors(int num) {
+        int sum = 0;
+        for (int i = 1; i <= num; i++) {
+            if (num % i == 0) {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int num1 = scanner.nextInt();
+        int num2 = scanner.nextInt();
+        
+        int sum1 = getSumOfDivisors(num1);
+        int sum2 = getSumOfDivisors(num2);
+        
+        // This is the corrected line with the proper logic
+        if (sum1 * num2 == sum2 * num1) {
+            System.out.println("Friendly Pair");
+        } else {
+            System.out.println("Not a Friendly Pair");
+        }
+        
+        scanner.close();
+    }
+}
